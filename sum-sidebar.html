@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .sum-sidebar-container{
+            display:flex;
+            flex-direction: column;
+            background: #222222;
+            height: 100vh;
+            justify-content: center;
+            align-items:center;
+        }
+        .sum-sidebar-item{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width:70px;
+            height:70px;
+        }
+        .sum-dsc{
+            font-size: 0.7em;
+            color: snow;
+            margin-top: 3px;
+        }
+
+        .logo, .logo-option{
+        /* background-image: url(images/option1.png); */
+        background-size: 80%;
+        background-position: 50% 0%;
+        background-repeat: no-repeat;
+        /* margin: 5px 20px 5px 10px; */
+        width:2rem;
+        height:1.5em;
+        filter: invert(100%) contrast(100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="sum-sidebar-container">
+        <div class="sum-sidebar-item">
+        <figure class="logo-option" style="background-image:url('images/option1.png')"></figure><div class="sum-dsc">홈</div>
+        </div>
+        <div class="sum-sidebar-item">
+        <figure class="logo-option" style="background-image:url('images/option1.png')"></figure><div class="sum-dsc">인기</div>
+        </div>
+        <div class="sum-sidebar-item">
+        <figure class="logo-option" style="background-image:url('images/option1.png')"></figure><div class="sum-dsc">구독</div>
+        </div>
+        <div class="sum-sidebar-item">
+        <figure class="logo-option" style="background-image:url('images/option1.png')"></figure><div class="sum-dsc">보관함</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    .world{
+        background: #999;
+    }
+    .modal-bar{
+        position: absolute;
+        left:0;
+        top:0;
+        background:yellow;
+    }
+    .modal{
+        display: inline-flex;
+    }
+    .modal:nth-child(4){
+        margin-left: 1rem;
+    }
+    .cam-info-modal-container,.app-info-modal-container,.alarm-info-modal-container,.self-info-modal-container{
+        position: fixed;
+        width: 1px;
+        height: 1px;
+        top:-500px;
+        overflow: hidden;
+        background: #333;
+    }
+    #cam-info,#app-info,#alarm-info,#self-info{
+        display: none;
+        overflow: hidden;
+        left:0;
+        top:0;
+        width:1px;
+        height: 1px;
+    }
+
+    #cam-info:hover ~ .cam-info-modal-container{
+        left:0;
+        top:70px;
+        z-index: 1;
+        width: 200px;
+        height: 85px;
+    }
+
+    #app-info:hover ~ .app-info-modal-container{
+        left:0;
+        top:70px;
+        z-index: 1;
+        width: 200px;
+        height: 230px;
+    }
+
+    #alarm-info:hover ~ .alarm-info-modal-container{
+        left:0;
+        top:70px;
+        z-index: 1;
+        width: 450px;
+        height: 550px;
+    }
+
+    #self-info:hover ~ .self-info-modal-container{
+        left:0;
+        top:70px;
+        z-index: 1;
+        width: 450px;
+        height: 585px;
+    }
+
+    label{
+        cursor: pointer;
+    }
+
+    .info-modal-item{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0.8em 0.8em 0.8em 0.8em;
+        /* border: solid red 1px; */
+    }
+
+    .alarm-info-modal-item{
+        display: flex;
+        flex-direction: row;
+        padding-bottom:5%;
+        margin: 1rem;
+    }
+
+    .alarm-logo{
+        flex: 0 0 auto;
+        margin-right:0.5rem;
+    }
+
+
+    /* --- */
+    .alarm{
+        height: 50px;
+        color : snow;
+        padding: 1rem;
+    }
+    .side-menu-dsc{
+        color: lightgray;
+        font-size: 0.8em;
+        font-weight: 300px;
+    }
+
+    .split-line-inner{
+        border-bottom: solid #444 1px; 
+    }
+
+</style>
+<body class="world">
+<div class="modal-bar">
+    <div class="modal">
+        <input id="cam-info" type="checkbox">
+        <label for="cam-info"><figure class="logo" style="background-image:url('images/option1.png')"></figure></label>
+
+        <div class="cam-info-modal-container">
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">동영상 업로드</div></div>
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">실시간 스트리밍 시작</div></div>
+        </div>  
+    </div>
+
+    <div class="modal">
+        <input id="app-info" type="checkbox">
+        <label for="app-info"><figure class="logo" style="background-image:url('images/option1.png')"></figure></label>
+
+        <div class="app-info-modal-container">
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">SOYOLIM TV</div>
+        </div>
+        <div class="split-line-inner"></div> 
+        <!-- 구분선  -->
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">SOYOLIM Music</div></div>  
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">SOYOLIM Kids</div></div>  
+        <div class="split-line-inner"></div> 
+        <!-- 구분선  -->
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">크리에이터 아카데미</div></div> 
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">SOYOLIM for Artists</div></div> 
+        </div>
+    </div>
+
+    <div class="modal">
+        <input id="alarm-info" type="checkbox">
+        <label for="alarm-info"><figure class="logo" style="background-image:url('images/option1.png')"></figure></label>
+         
+        <div class="alarm-info-modal-container">
+        <div class="alarm">알람</div>
+        <div class="split-line-inner"></div>
+        <div class="alarm-info-modal-item"><figure class="logo alarm-logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, expedita.</div>
+        </div>
+        <div class="alarm-info-modal-item"><figure class="logo alarm-logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium dolores asperiores architecto et. Fugit, dolore! Saepe deserunt, esse velit porro, voluptatibus, repellat ipsa impedit blanditiis aut nam quidem harum magni!</div></div>  
+        <div class="alarm-info-modal-item"><figure class="logo alarm-logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">Lorem ipsum dolor sit amet.</div></div>  
+        <div class="alarm-info-modal-item"><figure class="logo alarm-logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium dolores asperiores architecto et. Fugit, dolore! Saepe deserunt, esse veldem harum magni!</div></div>  
+        <div class="alarm-info-modal-item"><figure class="logo alarm-logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">Lorem ipsum dolor sit amet.</div></div>
+        <div class="alarm-info-modal-item"><figure class="logo alarm-logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc"> Lorem ipsum dolor sit amet.</div></div>   
+        </div>
+    </div>
+
+    <div class="modal">
+        <input id="self-info" type="checkbox">
+        <label for="self-info"><figure class="logo" style="background-image:url('images/option1.png')"></figure></label>
+
+        <div class="self-info-modal-container">
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc"><strong style="font-size:1rem;">SOYOLIM</strong><br>txter.jaya</div>
+        </div>
+        <div class="split-line-inner"></div> 
+        <!-- 구분선  -->
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">내 채널</div></div>  
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">구매 항목 및 멤버십</div></div>  
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">SOYOLIM 스튜디오</div></div> 
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">계정 전환</div></div> 
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">로그아웃</div></div> 
+        <div class="split-line-inner"></div>
+        <!-- 구분선  -->
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">디자인 기기 테마</div></div> 
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">언어:한국어</div></div> 
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">설정</div></div> 
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">SOYOLIM의 내 데이터</div></div> 
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">고객센터</div></div> 
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">의견 보내기</div></div> 
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">단축키</div></div> 
+        <div class="split-line-inner"></div>
+        <!-- 구분선 -->
+        <div class="info-modal-item"><figure class="logo" style="background-image:url('images/option1.png')"></figure><div class="side-menu-dsc">제한 모드:사용 안함</div></div> 
+        </div>
+    </div>
+</body>
+</html>
