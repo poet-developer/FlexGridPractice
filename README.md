@@ -1,5 +1,5 @@
 ## :whale2:&nbsp;&nbsp; YOUTUBE_UI_COPY
-### :fire:&nbsp;GOAL: Pratice Flex-Grid Coping Youtube UI.
+### :fire:&nbsp;GOAL: Pratice Flex-Grid, Cloning Youtube UI.
 ---
 ### :monocle_face: 미리보기 | Preview
 <img style="display: inline-block" src="https://user-images.githubusercontent.com/90435185/205425105-30e85f77-cbb1-4071-9228-8098e8050238.gif"  height="500"/>
